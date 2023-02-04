@@ -1,0 +1,55 @@
+/*
+|------------------------------------------------------------------|
+|                          BREAKPOINTS                             |
+|------------------------------------------------------------------|
+*/
+
+// Define the breakpoints
+$breakpoint-xs: 36rem;
+$breakpoint-sm: 48rem;
+$breakpoint-md: 64rem;
+$breakpoint-lg: 75rem;
+
+// Default is desktop first but we can pass min type to make it mobile first
+// Usages @include screen( xs ) || @include( xs, min ) || @include( custom, max, 600 )
+@mixin screen($size, $type: max, $pixels: $breakpoint-sm) {
+    @if $size == "xs" and $type == "max" {
+        @media (#{$type + -width}: #{$breakpoint-xs - 0.01}) {
+            @content;
+        }
+    } @else if $size == "xs" and $type == "min" {
+        @media (#{$type + -width}: $breakpoint-xs) {
+            @content;
+        }
+    } @else if $size == "sm" and $type == "max" {
+        @media (#{$type + -width}: #{$breakpoint-sm - 0.01}) {
+            @content;
+        }
+    } @else if $size == "sm" and $type == "min" {
+        @media (#{$type + -width}: $breakpoint-sm) {
+            @content;
+        }
+    } @else if $size == "md" and $type == "max" {
+        @media (#{$type + -width}: #{$breakpoint-md - 0.01}) {
+            @content;
+        }
+    } @else if $size == "md" and $type == "min" {
+        @media (#{$type + -width}: $breakpoint-md) {
+            @content;
+        }
+    } @else if $size == "lg" and $type == "lg" {
+        @media (#{$type + -width}: #{$breakpoint-lg - 0.01}) {
+            @content;
+        }
+    } @else if $size == "lg" and $type == "min" {
+        @media (#{$type + -width}: $breakpoint-lg) {
+            @content;
+        }
+    } @else if $size == "custom" {
+        @media (#{$type + -width}: #{($pixels / 16) + rem}) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}

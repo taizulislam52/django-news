@@ -1,0 +1,117 @@
+/* Base */ /*
+|------------------------------------------------------------------|
+|                        DEFAULT STYLES							   |
+|------------------------------------------------------------------|
+*/
+/*
+|------------------------------------------------------------------|
+|                          BREAKPOINTS                             |
+|------------------------------------------------------------------|
+*/
+/*
+|------------------------------------------------------------------|
+|                          UTILITIES 							   |
+|------------------------------------------------------------------|
+*/
+/*
+|------------------------------------------------------------------|
+|                          TYPOGRAPHY 							   |
+|------------------------------------------------------------------|
+*/
+/* Colors */
+/* Square Sans Text */
+@font-face {
+  font-display: swap;
+  font-family: "Heebo";
+  font-style: "normal";
+  font-weight: 300;
+  src: url("../fonts/Heebo-Light.ttf") format("truetype");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Heebo";
+  font-style: "normal";
+  font-weight: 400;
+  src: url("../fonts/Heebo-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Heebo";
+  font-style: "normal";
+  font-weight: 500;
+  src: url("../fonts/Heebo-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Heebo";
+  font-style: "normal";
+  font-weight: 600;
+  src: url("../fonts/Heebo-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Heebo";
+  font-style: "normal";
+  font-weight: 700;
+  src: url("../fonts/Heebo-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Heebo";
+  font-style: "normal";
+  font-weight: 800;
+  src: url("../fonts/Heebo-ExtraBold.ttf") format("truetype");
+}
+/* Base styles */
+* {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* stylelint-disable-next-line */
+  -webkit-appearance: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+}
+*::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*:focus {
+  outline: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Heebo", sans-serif;
+  color: #17222b;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Heebo", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Theme Components  */
+/* Theme Layouts  */
+/* Theme templates */

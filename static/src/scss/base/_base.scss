@@ -1,0 +1,58 @@
+/*
+|------------------------------------------------------------------|
+|                        DEFAULT STYLES							   |
+|------------------------------------------------------------------|
+*/
+
+@import "grids";
+@import "utilities";
+@import "typography";
+
+/* Base styles */
+
+* {
+    appearance: none;
+    box-sizing: border-box;
+    /* stylelint-disable-next-line */
+    -webkit-appearance: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    &::before,
+    &::after {
+        box-sizing: border-box;
+    }
+}
+
+*:focus {
+    outline: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $base-font;
+    color: $news-black;
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $base-font;
+}
+
+a {
+    text-decoration: none;
+}
