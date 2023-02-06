@@ -19,7 +19,7 @@
 |------------------------------------------------------------------|
 */
 /* Colors */
-/* Square Sans Text */
+/* Font Family */
 @font-face {
   font-display: swap;
   font-family: "Heebo";
@@ -108,10 +108,129 @@ h6 {
   font-family: "Heebo", sans-serif;
 }
 
+ul {
+  list-style: none;
+}
+
 a {
   text-decoration: none;
+  display: inline-block;
+}
+
+img {
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: auto;
+}
+
+.container {
+  width: min(1200px, 100% - 2rem);
+  margin-inline: auto;
 }
 
 /* Theme Components  */
 /* Theme Layouts  */
+.header__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-block: 1.25em;
+}
+@media (max-width: 47.99rem) {
+  .header__top {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 20px;
+  }
+}
+@media (max-width: 47.99rem) {
+  .header__top-nav {
+    display: none;
+  }
+}
+.header__top-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+}
+.header__top-menu__link {
+  color: #17222b;
+  font-size: 0.875rem;
+  font-weight: 600;
+  position: relative;
+}
+.header__top-menu__link::after {
+  content: "";
+  position: absolute;
+  background-color: #4e575e;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  -webkit-transition: width 0.4s;
+  transition: width 0.4s;
+}
+.header__top-menu__link:hover {
+  color: #29333c;
+}
+.header__top-menu__link:hover::after {
+  width: 100%;
+}
+.header__form {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+}
+@media (max-width: 47.99rem) {
+  .header__form {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    width: 100%;
+  }
+}
+.header__form-input {
+  color: #29333c;
+  font-weight: 700;
+  font-family: inherit;
+  font-size: 1rem;
+  background-color: #f2f9ff;
+  border: 1px solid #4e575e;
+  padding: 1em 1.875em;
+  border-radius: 20px;
+  width: 100%;
+}
+@media (max-width: 47.99rem) {
+  .header__form-input {
+    font-size: 0.875rem;
+  }
+}
+.header__brand-image {
+  height: 50px;
+  vertical-align: middle;
+  margin-right: 0.75rem;
+}
+.header__brand span {
+  font-size: 2.8125rem;
+  color: #17222b;
+  font-weight: 500;
+  vertical-align: middle;
+}
+@media (max-width: 47.99rem) {
+  .header__brand span {
+    font-size: 2.1875rem;
+  }
+}
+
 /* Theme templates */

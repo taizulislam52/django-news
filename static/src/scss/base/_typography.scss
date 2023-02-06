@@ -26,7 +26,7 @@ $news-dark-line: #404040;
 $news-light-line: #f2f6f8;
 
 
-/* Square Sans Text */
+/* Font Family */
 @include font-face("Heebo", "Heebo-Light", 300, "normal");
 @include font-face("Heebo", "Heebo-Regular", 400, "normal");
 @include font-face("Heebo", "Heebo-Medium", 500, "normal");
@@ -35,4 +35,4 @@ $news-light-line: #f2f6f8;
 @include font-face("Heebo", "Heebo-ExtraBold", 800, "normal");
 
 
-$base-font: "Heebo",sans-serif;
+$base-font: "Heebo", sans-serif;

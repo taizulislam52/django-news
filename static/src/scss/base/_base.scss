@@ -53,6 +53,22 @@ h6 {
     font-family: $base-font;
 }
 
+ul {
+    list-style: none;
+}
+
 a {
     text-decoration: none;
+    display: inline-block
+}
+
+img {
+    max-width: 100%;
+    object-fit: cover;
+    height: auto;
+}
+
+.container {
+    width: min(1200px, 100% - 2rem);
+    margin-inline: auto;
 }

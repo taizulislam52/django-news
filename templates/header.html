@@ -1,0 +1,24 @@
+{% load static %}
+<header class="header">
+    <div class="container">
+        <div class="header__top">
+            <a href="/" class="header__brand">
+                <img class="header__brand-image" src="{% static 'src/images/site-logo.png' %}" alt="Site Logo">
+                <span>News-Arch</span>
+            </a>
+            <form action="POST" class="header__form">
+                <input type="text" placeholder="Search news" name="search" class="header__form-input">
+            </form>
+            <nav class="header__top-nav">
+                <ul class="header__top-menu">
+                    <li class="header__top-menu__item">
+                        <a class="header__top-menu__link" href="#">Login</a>
+                    </li>
+                    <li class="header__top-menu__item">
+                        <a class="header__top-menu__link" href="#">Register</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>

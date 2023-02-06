@@ -1,0 +1,83 @@
+.header {
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-block: em(20px);
+        @include screen(sm) {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 20px;
+        }
+        &-nav {
+            @include screen(sm) {
+                display: none;
+            }
+        }
+        &-menu {
+            display: flex;
+            gap: 2rem;
+            
+            &__link {
+                color: $news-black;
+                font-size: rem(14px);
+                font-weight: 600;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    background-color: $news-grey;
+                    width: 0;
+                    height: 2px;
+                    bottom: -4px;
+                    left: 0;
+                    transition: width 0.4s;
+                }
+                &:hover {
+                    color: $news-grey-blue;
+                   &::after {
+                    width: 100%;
+                   }
+                }
+            }
+        }
+    }
+    &__form {
+        flex-basis: 40%;
+        @include screen(sm) {
+            flex-basis: 100%;
+            width: 100%;
+        }
+        &-input {
+            color: $news-grey-blue;
+            font-weight: 700;
+            font-family: inherit;
+            font-size: rem(16px);
+            background-color: $news-blue-light;
+            border: 1px solid $news-grey;
+            padding: em(16px) em(30px);
+            border-radius: 20px;
+            width: 100%;
+            @include screen(sm) {
+                font-size: rem(14px);
+            }
+        }
+    }
+    &__brand {
+        &-image {
+            height: 50px;
+            vertical-align: middle;
+            margin-right: rem(12px);
+        }
+        span {
+            font-size: rem(45px);
+            color: $news-black;
+            font-weight: 500;
+            vertical-align: middle;
+            @include screen(sm) {
+                font-size: rem(35px);
+            }
+        }
+    }
+}
