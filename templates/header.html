@@ -20,5 +20,52 @@
                 </ul>
             </nav>
         </div>
+        <div class="header__primary">
+            <button class="header__toggle">
+                <span class="header__toggle-bar"></span>
+            </button>
+            <nav class="header__primary-nav">
+                <ul class="header__primary-menu">
+                    <li class="header__primary-menu__item">
+                        <a class="header__primary-menu__link" href="#">Home</a>
+                    </li>
+                    <li class="header__primary-menu__item header__primary-menu__item--dropdown">
+                        <a class="header__primary-menu__link" href="#">Category</a>
+                        <ul class="header__primary-sub-menu">
+                            <li class="header__primary-sub-menu__item">
+                                <a class="header__primary-sub-menu__link" href="#">Business</a>
+                            </li>
+                            <li class="header__primary-sub-menu__item">
+                                <a class="header__primary-sub-menu__link" href="#">Entertainment</a>
+                            </li>
+                            <li class="header__primary-sub-menu__item">
+                                <a class="header__primary-sub-menu__link" href="#">Features</a>
+                            </li>
+                            <li class="header__primary-sub-menu__item">
+                                <a class="header__primary-sub-menu__link" href="#">Sports</a>
+                            </li>
+                            <li class="header__primary-sub-menu__item">
+                                <a class="header__primary-sub-menu__link" href="#">Trending</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="header__primary-menu__item">
+                        <a class="header__primary-menu__link" href="#">Contact</a>
+                    </li>
+                    <li class="header__primary-menu__item">
+                        <a class="header__primary-menu__link" href="#">About</a>
+                    </li>
+                    <li class="header__primary-menu__item">
+                        <a class="header__primary-menu__link" href="#">Login</a>
+                    </li>
+                    <li class="header__primary-menu__item">
+                        <a class="header__primary-menu__link" href="#">Register</a>
+                    </li>
+                </ul>
+            </nav>
+            <p class="header__current-date">
+                {% now "l, F j, Y" %}
+            </p>
+        </div>
     </div>
 </header>
