@@ -1,0 +1,105 @@
+.authentication {
+    background-color: $news-grey-light;
+    display: grid;
+    place-content: center;
+    padding-block: em(50px);
+
+    &__heading {
+        color: $news-black;
+        font-size: rem(40px);
+        line-height: rem(50px);
+        margin-bottom: rem(30px);
+
+        @include screen(sm) {
+            font-size: rem(25px);
+        }
+    }
+
+    .form {
+    
+        label {
+            display: block;
+            color: $news-grey;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="email"], input[type="password"]{
+            display: block;
+            border: none;
+            color: $news-black;
+            font-weight: 600;
+            font-size: rem(14px);
+            background: #f2f6f8;
+            padding: em(16px) em(20px);
+            margin-bottom: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+
+        }
+        br {
+            display: none;
+        }
+        .helptext {
+            color: rgba($news-black, $alpha: 0.4);
+            margin-bottom: rem(20px);
+            display: inline-block;
+            font-size: rem(14px);
+            ul {
+                margin-left: rem(10px);
+
+                li {
+                    margin-bottom: 2px;
+                    position: relative;
+                    padding-left: 10px;
+                    &::before {
+                        content: '';
+                        border-radius: 50%;
+                        width: 4px;
+                        height: 4px;
+                        background-color: $news-black;
+                        position: absolute;
+                        left: 0;
+                        top: 5px;
+                    }
+                }
+            }
+        }
+        .errorlist {
+            margin-block: rem(10px);
+
+            li {
+                color: $news-red;
+                font-size: rem(15px);
+            }
+        }
+        &__submit {
+            background-color: $news-blue-dark;
+            border: 1px solid transparent;
+            color: $white;
+            cursor: pointer;
+            font-size: rem(16px);
+            padding: em(14px) rem(20px);
+            margin-bottom: rem(20px);
+            transition: background-color 0.4s;
+
+            &:hover {
+                background-color: transparent;
+                border-color: $news-blue-dark;
+                color: $news-blue-dark;
+            }
+        }
+    }
+
+    &__links {
+        a {
+            color: $news-blue-dark;
+            font-weight: 600;
+            border-bottom: 1px solid transparent;
+            padding-bottom: 2px;
+            transition: border 0.4s;
+
+            &:hover {
+                border-color: $news-blue-dark;
+            }
+        }
+    }
+}

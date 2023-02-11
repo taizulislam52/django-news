@@ -1,17 +1,17 @@
 {% extends 'main.html' %}
 {% block content %}
-    <div class="register">
+    <div class="authentication">
         <div class="container">
-            <h1> Register as writer</h1>
-            <form class="register__form" method="POST">
+            <h1 class="authentication__heading"> Register as writer</h1>
+            <form class="form authentication__form" method="POST">
                 {% csrf_token %}
-                {{ form.as_p }}
-                <input class="register__button register__button--submit" type="submit" value="Register Now">
+                {{ form }}
+                <input class="form__submit authentication__button" type="submit" value="Register Now">
             </form>
-            <div>
-                Already have an account? 
+            <div class="authentication__links">
+                <span>Already have an account? </span>
+                <a href="#">Login</a>
             </div>
-            <a href="#">Login</a>
         </div>
     </div>
 {% endblock content %}
