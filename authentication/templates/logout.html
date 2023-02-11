@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+{% block content %}
+    <div class="authentication">
+        <div class="container">
+            <h1 class="authentication__heading authentication__heading--logout">You have been logged out</h1>
+            <div class="authentication__links">
+                <a href="{% url 'login' %}">Log in again</a>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

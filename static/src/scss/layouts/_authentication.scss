@@ -14,6 +14,10 @@
         line-height: rem(50px);
         margin-bottom: rem(30px);
 
+        &--logout {
+            color: rgba($news-black, $alpha: 0.7);
+        }
+
         @include screen(sm) {
             font-size: rem(25px);
         }
