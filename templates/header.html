@@ -2,7 +2,7 @@
 <header class="header">
     <div class="container">
         <div class="header__top">
-            <a href="/" class="header__brand">
+            <a href="{% url 'news-home' %}" class="header__brand">
                 <img class="header__brand-image" src="{% static 'src/images/site-logo.png' %}" alt="Site Logo">
                 <span>News-Arch</span>
             </a>
@@ -12,10 +12,10 @@
             <nav class="header__top-nav">
                 <ul class="header__top-menu">
                     <li class="header__top-menu__item">
-                        <a class="header__top-menu__link" href="#">Login</a>
+                        <a class="header__top-menu__link" href="{% url 'login' %}">Login</a>
                     </li>
                     <li class="header__top-menu__item">
-                        <a class="header__top-menu__link" href="#">Register</a>
+                        <a class="header__top-menu__link" href="{% url 'register' %}">Register</a>
                     </li>
                 </ul>
             </nav>

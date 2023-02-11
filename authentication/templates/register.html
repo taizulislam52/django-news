@@ -2,15 +2,17 @@
 {% block content %}
     <div class="authentication">
         <div class="container">
-            <h1 class="authentication__heading"> Register as writer</h1>
-            <form class="form authentication__form" method="POST">
-                {% csrf_token %}
-                {{ form }}
-                <input class="form__submit authentication__button" type="submit" value="Register Now">
-            </form>
-            <div class="authentication__links">
-                <span>Already have an account? </span>
-                <a href="#">Login</a>
+            <div class="authentication__inner">
+                <h1 class="authentication__heading"> Register as writer</h1>
+                <form class="form authentication__form" method="POST">
+                    {% csrf_token %}
+                    {{ form }}
+                    <input class="form__submit authentication__button" type="submit" value="Register Now">
+                </form>
+                <div class="authentication__links">
+                    <span>Already have an account? </span>
+                    <a href="{% url 'login' %}">Login</a>
+                </div>
             </div>
         </div>
     </div>
