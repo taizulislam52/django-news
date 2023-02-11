@@ -1,4 +1,13 @@
 {% extends 'main.html' %}
 {% block content %}
-    <h1> Home </h1>
+    <div class="container">
+        {% if messages %}
+            <ul class="flash-messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="flash-messages__{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <h1> Home </h1>
+    </div>
 {% endblock content %}
