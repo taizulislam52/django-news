@@ -131,6 +131,23 @@ img {
 }
 
 /* Theme Components  */
+.flash-messages {
+  margin-block: 1.25rem;
+}
+.flash-messages li {
+  padding: 16px;
+  font-weight: 600;
+  margin-bottom: 0.3125rem;
+}
+.flash-messages__success {
+  background-color: #1091ff;
+  color: #fff;
+}
+.flash-messages__error {
+  background-color: #f55;
+  color: #fff;
+}
+
 /* Theme Layouts  */
 .header__top {
   display: -webkit-box;

@@ -1,0 +1,18 @@
+.flash-messages {
+    margin-block: rem(20px);
+    
+    li {
+        padding: 16px;
+        font-weight: 600;
+        margin-bottom: rem(5px);
+    }
+    &__success {
+        background-color: $news-blue-dark;
+        color: $white;
+    }
+
+    &__error {
+        background-color: $news-red;
+        color: $white;
+    }
+}
