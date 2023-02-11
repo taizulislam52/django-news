@@ -1,9 +1,13 @@
 .authentication {
     background-color: $news-grey-light;
-    display: grid;
-    place-content: center;
     padding-block: em(50px);
-
+    &__inner {
+        width: 50%;
+        margin-inline: auto;
+        @include screen(sm) {
+            width: 100%;
+        }
+    }
     &__heading {
         color: $news-black;
         font-size: rem(40px);
@@ -41,7 +45,7 @@
         .helptext {
             color: rgba($news-black, $alpha: 0.4);
             margin-bottom: rem(20px);
-            display: inline-block;
+            display: block;
             font-size: rem(14px);
             ul {
                 margin-left: rem(10px);

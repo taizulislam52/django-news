@@ -545,9 +545,16 @@ img {
 
 .authentication {
   background-color: #ecedee;
-  display: grid;
-  place-content: center;
   padding-block: 3.125em;
+}
+.authentication__inner {
+  width: 50%;
+  margin-inline: auto;
+}
+@media (max-width: 47.99rem) {
+  .authentication__inner {
+    width: 100%;
+  }
 }
 .authentication__heading {
   color: #17222b;
@@ -583,7 +590,7 @@ img {
 .authentication .form .helptext {
   color: rgba(23, 34, 43, 0.4);
   margin-bottom: 1.25rem;
-  display: inline-block;
+  display: block;
   font-size: 0.875rem;
 }
 .authentication .form .helptext ul {
