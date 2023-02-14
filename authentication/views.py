@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from .forms import UserRegisterForm
 from django.contrib import messages
 
 # Create your views here.
+@user_passes_test(lambda user: not user.username, login_url='/profile', redirect_field_name=None)
 def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
