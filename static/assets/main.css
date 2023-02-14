@@ -649,4 +649,8 @@ img {
   border-color: #1091ff;
 }
 
+.profile {
+  padding-block: 2.5em;
+}
+
 /* Theme templates */

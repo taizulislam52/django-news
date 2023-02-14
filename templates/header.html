@@ -11,12 +11,21 @@
             </form>
             <nav class="header__top-nav">
                 <ul class="header__top-menu">
+                    {% if user.is_authenticated %}
+                    <li class="header__top-menu__item">
+                        <a class="header__top-menu__link" href="{% url 'profile' %}">Profile</a>
+                    </li>
+                    <li class="header__top-menu__item">
+                        <a class="header__top-menu__link" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                    {% else %}
                     <li class="header__top-menu__item">
                         <a class="header__top-menu__link" href="{% url 'login' %}">Login</a>
                     </li>
                     <li class="header__top-menu__item">
                         <a class="header__top-menu__link" href="{% url 'register' %}">Register</a>
                     </li>
+                    {% endif %}
                 </ul>
             </nav>
         </div>
