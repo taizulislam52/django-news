@@ -2,6 +2,13 @@
 {% block content %}
     <div class="authentication">
         <div class="container">
+            {% if messages %}
+                <ul class="flash-messages">
+                    {% for message in messages %}
+                    <li{% if message.tags %} class="flash-messages__{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
             <div class="authentication__inner">
                 <h1 class="authentication__heading"> Register as writer</h1>
                 <form class="form authentication__form" method="POST">
