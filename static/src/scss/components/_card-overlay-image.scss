@@ -1,0 +1,81 @@
+.card-overlay-image {
+        display: grid;
+        position: relative;
+        height: 100%;
+        min-height: 450px;
+        place-content: flex-end;
+        &::after {
+            position: absolute;
+            content: "";
+            height: 60%;
+            width: 100%;
+            background: linear-gradient(0deg,rgba(0,0,0,.7),transparent);
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            border-radius: 5px;
+
+            @include screen(sm) {
+                height: 80%;
+            }
+        }
+        &__image {
+            height: 100%;
+            left: 50%;
+            border-radius: 5px;
+            object-fit: cover;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            z-index: -1;
+            display: block;
+        }
+        &__contents {
+            padding: 40px;
+        }
+        &__title {
+            a {
+                color: $white;
+                font-size: rem(30px);
+                line-height: rem(36px);
+                font-weight: 700;
+                margin-bottom: rem(10px);
+                @include screen(sm) {
+                    font-size: rem(25px);
+                    line-height: rem(25px);
+                }
+                &:hover {
+                    color: $news-blue-dark;
+                }
+            }
+    
+        }
+
+        &__content {
+            color: $white;
+            font-size: rem(15px);
+            line-height: rem(21px);
+            font-weight: 600;
+            &:hover {
+                color: $news-blue-dark;
+            }
+        }
+        &__meta {
+            color: $white;
+            margin-top: rem(32px);
+            &-category {
+                color: $white;
+                text-transform: uppercase;
+                font-weight: 600;
+                &:hover {
+                    color: $news-blue-dark;
+                }
+            }
+
+            &-date {
+                font-weight: 600;
+                margin-left: rem(8px);
+            }
+        }
+}

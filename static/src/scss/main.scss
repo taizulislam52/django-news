@@ -4,10 +4,13 @@
 
 /* Theme Components  */
 @import './components/flash-messages';
+@import './components/card-list';
+@import './components//card-overlay-image';
 
 /* Theme Layouts  */
 @import './layouts/header';
 @import './layouts/authentication';
 @import './layouts/profile';
+@import './layouts/home/featured';
 
 /* Theme templates */

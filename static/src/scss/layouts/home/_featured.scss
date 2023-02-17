@@ -1,0 +1,12 @@
+.home-featured {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding-block: em(35px);
+    @include screen( custom, max, 876 ) {
+        grid-template-columns: 1fr;
+    }
+    &__overlay {
+        grid-column: 1/3;
+    }
+}

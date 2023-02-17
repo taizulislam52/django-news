@@ -7,7 +7,7 @@
 // Convert px to rem
 // @param $size - size in px
 @function rem($size) {
-    $rem-size: $size / 16px;
+    $rem-size: calc($size / 16px);
 
     @return $rem-size * 1rem;
 }
@@ -15,7 +15,7 @@
 // Convert px to em
 // @param $size - size in px
 @function em($size) {
-    $em-size: $size / 16px;
+    $em-size: calc($size / 16px);
 
     @return $em-size * 1em;
 }
