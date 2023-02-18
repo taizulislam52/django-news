@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+{% block content %}
+    <div class="container">
+        <div class="single">
+            <a href="#" class="single__category">{{ object.category.name }}</a>
+            <h3 class="single__title">
+                {{ object.title }}
+            </h3>
+            <img src="{{ object.features_image.url }}" alt="{{ post.title }}" class="single__image">
+            <div class="single__context">
+                <div class="single__meta">
+                    <p class="single__meta-author">{{ object.author|capfirst }}</p>
+                    <p class="single__meta-date">{{ object.created_at|date:'F j, Y' }}</p>
+                </div>
+                <div>Social Share</div>
+            </div>
+            <div class="single__content">{{ object.content }}</div>
+        </div>
+    </div>
+{% endblock content %}
