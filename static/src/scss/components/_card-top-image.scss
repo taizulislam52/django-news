@@ -1,0 +1,58 @@
+.card-top-image {
+    margin-bottom: rem(10px);
+   
+    &__image {
+        aspect-ratio: 3/2;
+        border-radius: 5px;
+    }
+
+    &__contents {
+        padding: 40px;
+    }
+    &__title {
+        margin-top: rem(18px);
+        a {
+            color: $black;
+            font-size: rem(20px);
+            line-height: rem(24px);
+            font-weight: 700;
+            margin-bottom: rem(10px);
+            @include screen(sm) {
+                font-size: rem(18px);
+                line-height: rem(22px);
+            }
+            &:hover {
+                color: $news-blue-dark;
+            }
+        }
+
+    }
+
+    &__content {
+        color: rgba($news-black, 0.6);
+        font-size: rem(15px);
+        line-height: rem(21px);
+        &:hover {
+            color: $news-blue-dark;
+        }
+    }
+    &__meta {
+        color: $news-grey;
+        margin-top: rem(20px);
+        font-size: rem(14px);
+        &-category {
+            color: $news-blue-dark;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: color 0.4s;
+            &:hover {
+                color: $news-blue;
+            }
+        }
+
+        &-date {
+            font-weight: 600;
+            margin-left: rem(8px);
+        }
+    }
+}

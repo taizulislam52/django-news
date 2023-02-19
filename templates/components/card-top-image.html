@@ -4,7 +4,11 @@
         <h3 class="card-top-image__title">
             <a href="#">{{ news.title }}</a>
         </h3>
-        <a href="#" class="card-top-image__content">{{ news.content|truncatewords:50 }}</a>
+        <a href="#" class="card-top-image__content">
+            {% autoescape off %}
+                {{ news.content|truncatewords:20 }}
+            {% endautoescape %}
+        </a>
         <div class="card-top-image__meta">
             <a href="#" class="card-top-image__meta-category">{{ news.category.name }}</a>
             <span class="card-top-image__meta-date">{{ news.created_at|date:'F j, Y' }}</span>
