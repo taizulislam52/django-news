@@ -1,0 +1,35 @@
+.search {
+    padding-block: em(35px);
+    &__results {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+
+        @include screen(md) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include screen(sm) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    &__heading {
+        font-size: rem(40px);
+        padding-bottom: em(10px);
+
+        @include screen(sm) {
+            font-size: rem(25px);
+        }
+
+    }
+
+    &__not-found {
+        font-size: rem(25px);
+        font-weight: 500;
+
+        @include screen(sm) {
+            font-size: rem(18px);
+            line-height: rem(22px);
+        }
+    }
+}

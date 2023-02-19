@@ -892,4 +892,42 @@ img {
           transform: translateY(-50%);
 }
 
+.search {
+  padding-block: 2.1875em;
+}
+.search__results {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+@media (max-width: 63.99rem) {
+  .search__results {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 47.99rem) {
+  .search__results {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.search__heading {
+  font-size: 2.5rem;
+  padding-bottom: 0.625em;
+}
+@media (max-width: 47.99rem) {
+  .search__heading {
+    font-size: 1.5625rem;
+  }
+}
+.search__not-found {
+  font-size: 1.5625rem;
+  font-weight: 500;
+}
+@media (max-width: 47.99rem) {
+  .search__not-found {
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+  }
+}
+
 /* Theme templates */
