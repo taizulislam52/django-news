@@ -6,8 +6,8 @@
                 <img class="header__brand-image" src="{% static 'src/images/site-logo.png' %}" alt="Site Logo">
                 <span>News-Arch</span>
             </a>
-            <form action="POST" class="header__form">
-                <input type="text" placeholder="Search news" name="search" class="header__form-input">
+            <form method="GET" action="{% url 'news-search' %}" class="header__form">
+                <input type="text" value="{{request.GET.q}}" placeholder="Search news" name="q" class="header__form-input">
             </form>
             <nav class="header__top-nav">
                 <ul class="header__top-menu">

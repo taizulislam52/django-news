@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
+from django.db.models import Q
 from .models import Post
 from django.http import HttpResponse
 
@@ -23,3 +24,20 @@ class NewsListView(ListView):
 class NewsSingleView(DetailView):
     model = Post
     template_name = 'news/single.html'
+
+
+class NewsSearchView(ListView):
+    model = Post
+    template_name = 'news/search.html'
+    context_object_name = 'news_list'
+
+    def get_queryset(self):
+        q = self.request.GET.get('q') if self.request.GET.get('q') != None else ''
+
+        news_list = Post.objects.filter(
+            Q(content__icontains=q) |
+            Q(title__icontains=q)
+        )
+   
+        return news_list
+    

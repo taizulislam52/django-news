@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+{% block content %}
+    <div class="container">
+        <div class="search">
+            <h1 class="search__query">Search Results</h1>
+            <div class="search__results">
+                {% if news_list %}
+                    {% for news in news_list %}
+                        {% include 'components/card-top-image.html' %}
+                    {% endfor %}
+                {% else %}
+                <h3 class="search__not-found">
+                    We’re sorry, but no results were found matching your search. Please try searching again.
+                </h3>
+                {% endif %}
+            </div>
+           
+        </div>
+    </div>
+{% endblock content %}
