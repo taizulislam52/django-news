@@ -2,9 +2,9 @@
     <img src="{{ news.features_image.url }}" alt="{{ post.title }}" class="card-overlay-image__image">
     <div class="card-overlay-image__contents">
         <h3 class="card-overlay-image__title">
-            <a href="#">{{ news.title }}</a>
+            <a href="{{ news.get_absolute_url }}">{{ news.title }}</a>
         </h3>
-        <a href="#" class="card-overlay-image__content">{{ news.content|truncatewords:30 }}</a>
+        <a href="{{ news.get_absolute_url }}" class="card-overlay-image__content">{{ news.content|truncatewords:30 }}</a>
         <div class="card-overlay-image__meta">
             <a href="#" class="card-overlay-image__meta-category">{{ news.category.name }}</a>
             <span>|</span>

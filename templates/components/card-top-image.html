@@ -2,9 +2,9 @@
     <img src="{{ news.features_image.url }}" alt="{{ news.title }}" class="card-top-image__image">
     <div class="card--top-image__contents">
         <h3 class="card-top-image__title">
-            <a href="#">{{ news.title }}</a>
+            <a href="{{ news.get_absolute_url }}">{{ news.title }}</a>
         </h3>
-        <a href="#" class="card-top-image__content">
+        <a href="{{ news.get_absolute_url }}" class="card-top-image__content">
             {% autoescape off %}
                 {{ news.content|truncatewords:20 }}
             {% endautoescape %}
