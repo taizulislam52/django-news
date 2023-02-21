@@ -4,7 +4,11 @@
         <h3 class="card-overlay-image__title">
             <a href="{{ news.get_absolute_url }}">{{ news.title }}</a>
         </h3>
-        <a href="{{ news.get_absolute_url }}" class="card-overlay-image__content">{{ news.content|truncatewords:30 }}</a>
+        <a href="{{ news.get_absolute_url }}" class="card-overlay-image__content">
+            {% autoescape off %}
+             {{ news.content|truncatewords:30 }}
+            {% endautoescape %}
+        </a>
         <div class="card-overlay-image__meta">
             <a href="#" class="card-overlay-image__meta-category">{{ news.category.name }}</a>
             <span>|</span>

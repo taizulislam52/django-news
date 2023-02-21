@@ -5,13 +5,17 @@ from .models import Post, Tag, Category
 # Register your models here.
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    pass
+    list_display = ("name", "slug",)
+    prepopulated_fields = {"slug": ("name",)}
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
+    list_display = ("title",)
+    prepopulated_fields = {"slug": ("title",)}
     save_as = True
   
 
 @admin.register(Tag)
 class TagAdmin(admin.ModelAdmin):
-    pass
+    list_display = ("name", "slug",)
+    prepopulated_fields = {"slug": ("name",)}
