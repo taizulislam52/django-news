@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+{% block content %}
+    <div class="container">
+        <div class="search">
+            <h1 class="search__heading">Category: {{ category_name | capfirst }}</h1>
+            {% if categories %}
+            <div class="search__results">
+                {% for category in categories %}
+                    {% include 'components/card-top-image.html' with news=category  %}
+                {% endfor %}
+            </div>
+            {% else %}
+             <h3 class="search__not-found">
+                We’re sorry, but no results were found matching your category.
+            </h3>
+            {% endif %}
+           
+        </div>
+    </div>
+{% endblock content %}
