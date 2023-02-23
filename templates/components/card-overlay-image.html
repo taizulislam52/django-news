@@ -10,7 +10,7 @@
             {% endautoescape %}
         </a>
         <div class="card-overlay-image__meta">
-            <a href="#" class="card-overlay-image__meta-category">{{ news.category.name }}</a>
+            <a href="{% url 'news-category' news.category.slug  %}" class="card-overlay-image__meta-category">{{ news.category.name }}</a>
             <span>|</span>
             <span class="card-overlay-image__meta-date">{{ news.created_at|date:'F j, Y' }}</span>
         </div>

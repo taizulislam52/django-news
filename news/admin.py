@@ -10,7 +10,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ("title",)
+    list_display = ("title",'category')
     prepopulated_fields = {"slug": ("title",)}
     save_as = True
   

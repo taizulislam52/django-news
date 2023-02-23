@@ -4,7 +4,7 @@
         <div class="single">
             <div class="single__category">
                 <span>Category&nbsp;/&nbsp;</span>
-                <a href="#" class="single__category">{{ object.category.name }}</a>
+                <a href="{{ object.category.get_absolute_url }}" class="single__category">{{ object.category.name }}</a>
             </div>
             <h3 class="single__title">
                 {{ object.title }}

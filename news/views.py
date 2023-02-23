@@ -14,7 +14,7 @@ class NewsListView(ListView):
     context_object_name = 'news_list'
 
     def get_queryset(self):
-        return Post.objects.all().order_by('-created_at')[1:6]
+        return Post.objects.all().order_by('-created_at')[:5]
 
     def get_context_data(self, **kwargs):
         context = super(NewsListView, self).get_context_data(**kwargs)
@@ -50,7 +50,7 @@ class NewsCategoryView(ListView):
 
     def get_queryset(self):
         self.category = get_object_or_404(Category, slug=self.kwargs['slug'])
-        return Post.objects.filter(category=self.category).order_by('-created_at')[1:6]
+        return Post.objects.filter(category=self.category).order_by('-created_at')[:6]
     
     def get_context_data(self, **kwargs):
         context = super(NewsCategoryView, self).get_context_data(**kwargs)

@@ -10,7 +10,7 @@
             {% endautoescape %}
         </a>
         <div class="card-top-image__meta">
-            <a href="#" class="card-top-image__meta-category">{{ news.category.name }}</a>
+            <a href="{{ news.category.get_absolute_url }}" class="card-top-image__meta-category">{{ news.category.name }}</a>
             <span class="card-top-image__meta-date">{{ news.created_at|date:'F j, Y' }}</span>
         </div>
     </div>

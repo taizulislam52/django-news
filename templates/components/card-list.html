@@ -4,6 +4,6 @@
         <h3 class="card-list__title">
             <a href="{{ news.get_absolute_url }}">{{news.title}}</a>
         </h3>
-        <a href="#" class="card-list__category">{{ news.category.name }}</a>
+        <a href="{{ news.category.get_absolute_url }}" class="card-list__category">{{ news.category.name }}</a>
     </div>
 </div>
