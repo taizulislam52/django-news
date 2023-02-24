@@ -3,15 +3,13 @@
         <h2 class="home-trending__heading">
             Trending News
         </h2>
-        <div class="home-trending-news">
-            <div class="home-trending-news__features">
-                {% include 'components/card-top-image.html' with news=trending_news_features %}
-            </div>
-            <div class="home-trending-news__list">
-                {% for news in trending_news_list %}
-                    {% include 'components/card-list.html' %}
-                {% endfor %}
-            </div>
+        <div class="home-trending__news">
+            {% for news in trending_news %}
+                {% include 'components/card-top-image.html' %}
+            {% endfor %}
+        </div>
+        <div class="home-trending-button">
+            <button class="home-trending-button__button">Load More</button>
         </div>
     </div>
 </div>

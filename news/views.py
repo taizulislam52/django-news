@@ -19,8 +19,7 @@ class NewsListView(ListView):
     def get_context_data(self, **kwargs):
         context = super(NewsListView, self).get_context_data(**kwargs)
         context['first_news'] = Post.objects.first()
-        context['trending_news_features'] = Post.objects.filter(category__slug='trending').first()
-        context['trending_news_list'] = Post.objects.filter(category__slug='trending')[1:]
+        context['trending_news'] = Post.objects.filter(category__slug='trending')[0:5]
     
         return context
 

@@ -1,0 +1,28 @@
+.home-trending {
+    background-color: $white;
+    border-radius: $border-radius;
+    padding: rem(25px) rem(20px);
+    &__heading {
+        font-size: rem(24px);
+        margin-bottom: rem(20px);
+    }
+    &__news {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        gap: 32px;
+    }
+    &-button {
+        text-align: center;
+        margin-top: rem(25px);
+        &__button {
+            background-color: $news-blue-light;
+            color: $news-blue-dark;
+            border: 1px solid $news-blue;
+            padding: em(13px) em(26px);
+            transition: background-color 0.4s;
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+}

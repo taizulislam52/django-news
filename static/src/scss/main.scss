@@ -12,8 +12,9 @@
 @import './layouts/header';
 @import './layouts/authentication';
 @import './layouts/profile';
-@import './layouts/home/featured';
 @import './layouts/single';
 @import './layouts/search';
 @import './layouts/footer';
+
 /* Theme templates */
+@import './templates/home';
