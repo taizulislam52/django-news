@@ -1,8 +1,8 @@
 <div class="card-list">
-    <img src="{{ news.features_image.url }}" alt="{{ news.title }}" class="card-list__image">
+    <img src="{{ news.get_features_image_url|safe }}" alt="{{ news.title }}" class="card-list__image">
     <div class="card--top-image__contents">
         <h3 class="card-list__title">
-            <a href="{{ news.get_absolute_url }}">{{news.title}}</a>
+            <a href="{{ news.get_absolute_url }}">{{news.title|truncatewords:8}}</a>
         </h3>
         <a href="{{ news.category.get_absolute_url }}" class="card-list__category">{{ news.category.name }}</a>
     </div>
