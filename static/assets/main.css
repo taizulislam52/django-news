@@ -337,6 +337,24 @@ img {
   margin-left: 0.5rem;
 }
 
+.pagination {
+  margin-top: 2.1875rem;
+  text-align: center;
+}
+.pagination__link {
+  color: #1091ff;
+  border: 1px solid #70bdff;
+  padding: 0.5em 0.625em;
+}
+.pagination__link--active {
+  background-color: #1091ff;
+  color: #fff;
+}
+.pagination__link:hover {
+  background-color: #1091ff;
+  color: #fff;
+}
+
 /* Theme Layouts  */
 .header__top {
   display: -webkit-box;
@@ -1027,7 +1045,9 @@ img {
   .footer-nav__link {
     padding: 0.625em 0;
   }
-} /* Theme templates */
+}
+
+/* Theme templates */
 .home-featured {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

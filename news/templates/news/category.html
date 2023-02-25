@@ -22,7 +22,7 @@
                         {% endif %}
                         {% for num in page_obj.paginator.page_range  %}
                             {% if page_obj.number == num %}
-                                <a class="pagination__link pagination__link--active" href="?page={{ num }}">{{ num }}</a>
+                                <a class="pagination__link pagination__link--active" disabled aria-disabled="true" role="link">{{ num }}</a>
                             {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
                                 <a class="pagination__link" href="?page={{ num }}">{{ num }}</a>
                             {% endif %}
