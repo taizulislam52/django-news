@@ -2,8 +2,9 @@ from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, DetailView
 from django.db.models import Q
+from django.template.loader import render_to_string
 from .models import Post, Category
-from django.http import HttpResponse
+from django.http import JsonResponse
 
 
 # Create your views here.
@@ -19,7 +20,8 @@ class NewsListView(ListView):
     def get_context_data(self, **kwargs):
         context = super(NewsListView, self).get_context_data(**kwargs)
         context['first_news'] = Post.objects.first()
-        context['trending_news'] = Post.objects.filter(category__slug='trending')[0:5]
+        context['total_trending_news'] = Post.objects.filter(category__slug='trending').count()
+        context['trending_news'] = Post.objects.filter(category__slug='trending')[0:6]
     
         return context
 
@@ -58,3 +60,18 @@ class NewsCategoryView(ListView):
         context['category_name'] = self.kwargs['slug']
     
         return context
+
+def load_more_trending_news(request):
+    offset = request.POST.get('offset')
+    offset_int = int(offset)
+    limit = 3
+    trending_news_obj = Post.objects.filter(category__slug='trending')[offset_int:offset_int+limit]
+    trending_news = ''
+   
+    for news in trending_news_obj:
+        trending_news += render_to_string('components/card-top-image.html', {'news':news} )
+    
+    data = {
+        'trending_news': trending_news
+    }
+    return JsonResponse(data=data)
