@@ -10,6 +10,18 @@
         display: grid;
         grid-template-columns: repeat(3, auto);
         gap: 32px;
+        @include screen(md) {
+            grid-template-columns: repeat(2, auto);
+        }
+        @include screen(sm) {
+            grid-template-columns: auto
+        }
+        img {
+            height: 237px;
+            @include screen(md) {
+                height: auto;
+            }
+        }
     }
     &-button {
         text-align: center;

@@ -1057,6 +1057,24 @@ img {
   grid-template-columns: repeat(3, auto);
   gap: 32px;
 }
+@media (max-width: 63.99rem) {
+  .home-trending__news {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+@media (max-width: 47.99rem) {
+  .home-trending__news {
+    grid-template-columns: auto;
+  }
+}
+.home-trending__news img {
+  height: 237px;
+}
+@media (max-width: 63.99rem) {
+  .home-trending__news img {
+    height: auto;
+  }
+}
 .home-trending-button {
   text-align: center;
   margin-top: 1.5625rem;
