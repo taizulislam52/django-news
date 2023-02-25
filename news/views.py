@@ -50,10 +50,11 @@ class NewsCategoryView(ListView):
     model = Post
     template_name = 'news/category.html'
     context_object_name = 'categories'
+    paginate_by = 3
 
     def get_queryset(self):
         self.category = get_object_or_404(Category, slug=self.kwargs['slug'])
-        return Post.objects.filter(category=self.category).order_by('-created_at')[:6]
+        return Post.objects.filter(category=self.category).order_by('-created_at')
     
     def get_context_data(self, **kwargs):
         context = super(NewsCategoryView, self).get_context_data(**kwargs)
