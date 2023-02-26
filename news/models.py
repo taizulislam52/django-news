@@ -2,13 +2,42 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
 from django.urls import reverse
+from django.core.exceptions import ValidationError
+from django.forms.widgets import TextInput
 import uuid
 
+class ColorField(models.CharField):
+    description = "Field for storing RGB color value"
 
+    def __init__(self, *args, **kwargs):
+        kwargs['max_length'] = 7
+        super().__init__(*args, **kwargs)
+    
+    def deconstruct(self):
+        name, path, args, kwargs = super().deconstruct()
+        del kwargs["max_length"]
+        return name, path, args, kwargs
+
+    def formfield(self, **kwargs):
+        kwargs['widget'] = TextInput(attrs={'type': 'color'})
+        return super(ColorField, self).formfield(**kwargs)
+    
+    def db_type(self, connection):
+        return 'CharField'
+    
+    def from_db_value(self, value, expression, connection):
+        if value is None:
+            return value
+        return value
+
+    def get_prep_value(self, value):
+        return value
+    
 # Create your models here.
 class Category(models.Model):
     name = models.CharField(max_length = 50)
     slug = models.SlugField(null=True, unique=True)
+    color = ColorField(blank=True)
 
     class Meta:
         db_table = 'categories'

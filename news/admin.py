@@ -5,7 +5,7 @@ from .models import Post, Tag, Category
 # Register your models here.
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ("name", "slug",)
+    list_display = ("name", "slug","color")
     prepopulated_fields = {"slug": ("name",)}
 
 @admin.register(Post)
