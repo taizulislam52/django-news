@@ -25,6 +25,9 @@
     {% include 'news/home/trending.html' with trending_news=trending_news %}
     {% include 'news/home/features.html' with features_news=features_news %}
     <div class="container">
-        {% include 'components/newsletter.html' with modifier='newsletter--home' %}
+        <div class="home-newsletter-categories">
+            {% include 'components/newsletter.html' with modifier='home-newsletter-categories__newsletter' %}
+            {% include 'components/news-categories.html' with modifier='home-newsletter-categories__categories' categoris=categories %}
+        </div>
     </div>
 {% endblock content %}

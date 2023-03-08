@@ -1,0 +1,37 @@
+<div class="news-categories {{ modifier }}">
+    <h3 class="news-categories__heading">News categories</h3>
+    <ul class="news-categories-items">
+        {% for category in categories %}
+        <li class="news-categories-items__item">
+            <a href="{{ category.get_absolute_url }}" class="news-categories-items__link">{{ category.name }}</a>
+        </li>
+        {% endfor %}
+        <li class="news-categories-items__item">
+            <a href="{% url 'news-category' 'politics' %}" class="news-categories-items__link">Politics</a>
+        </li>
+        <li class="news-categories-items__item">
+            <a href="{% url 'news-category' 'science' %}" class="news-categories-items__link">Science</a>
+        </li>
+        <li class="news-categories-items__item">
+            <a href="{% url 'news-category' 'health' %}" class="news-categories-items__link">Health</a>
+        </li>
+        <li class="news-categories-items__item">
+            <a href="{% url 'news-category' 'sports' %}" class="news-categories-items__link">Sports</a>
+        </li>
+        <li class="news-categories-items__item">
+            <a href="{% url 'news-category' 'entertainment' %}" class="news-categories-items__link">Entertainment</a>
+        </li>
+        <li class="news-categories-items__item">
+            <a href="{% url 'news-category' 'education' %}" class="news-categories-items__link">Education</a>
+        </li>
+        <li class="news-categories-items__item">
+            <a href="{% url 'news-category' 'foods' %}" class="news-categories-items__link">Foods</a>
+        </li>
+        <li class="news-categories-items__item">
+            <a href="{% url 'news-category' 'correction' %}" class="news-categories-items__link">Correction</a>
+        </li>
+        <li class="news-categories-items__item">
+            <a href="{% url 'news-category' 'todays-paper' %}" class="news-categories-items__link">Today’s Paper</a>
+        </li>
+    </ul>
+</div>

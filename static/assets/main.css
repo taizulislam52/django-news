@@ -443,6 +443,28 @@ img {
   background-color: rgba(16, 145, 255, 0.8);
 }
 
+.news-categories {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 1.5em 1.25em;
+}
+.news-categories__heading {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1.875rem;
+}
+.news-categories-items {
+  -webkit-column-count: 2;
+     -moz-column-count: 2;
+          column-count: 2;
+}
+.news-categories-items__item {
+  padding-bottom: 1em;
+}
+.news-categories-items__link {
+  color: #39424a;
+}
+
 /* Theme Layouts  */
 .header__top {
   display: -webkit-box;
