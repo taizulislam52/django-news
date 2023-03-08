@@ -24,4 +24,7 @@
     {{ ajax_url|json_script:"ajax_url"}}
     {% include 'news/home/trending.html' with trending_news=trending_news %}
     {% include 'news/home/features.html' with features_news=features_news %}
+    <div class="container">
+        {% include 'components/newsletter.html' with modifier='newsletter--home' %}
+    </div>
 {% endblock content %}
