@@ -1,0 +1,38 @@
+.home-features {
+    padding: em(35px) 0;
+    &__heading {
+        background-color: $white;
+        border-radius: $border-radius;
+        margin-bottom: rem(25px);
+        padding: em(18px) em(20px);
+    }
+    &-news {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        gap: 32px;
+        @include screen(md) {
+            grid-template-columns: repeat(2, auto);
+        }
+        @include screen(sm) {
+            grid-template-columns: auto
+        }
+        &__card {
+            background-color: $white;
+            border-radius: $border-radius;
+            & > div {
+                padding: 0 em(20px) em(24px);
+            }
+        }
+        img {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            height: 237px;
+            width: 100%;
+            @include screen(md) {
+                height: auto;
+                object-fit: cover;
+                width: 100%;
+            }
+        }
+    }
+}

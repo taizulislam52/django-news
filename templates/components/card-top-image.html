@@ -1,6 +1,6 @@
-<div class="card-top-image">
+<div class="card-top-image {{ modifer }}">
     <img src="{{ news.get_features_image_url|safe }}" alt="{{ news.title }}" class="card-top-image__image">
-    <div class="card--top-image__contents">
+    <div class="card-top-image__contents">
         <h3 class="card-top-image__title">
             <a href="{{ news.get_absolute_url }}">{{ news.title }}</a>
         </h3>

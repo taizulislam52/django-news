@@ -3,9 +3,9 @@
         <h2 class="home-features__heading">
             Features News
         </h2>
-        <div class="home-features__news">
+        <div class="home-features-news">
             {% for news in features_news %}
-                {% include 'components/card-top-image.html' %}
+                {% include 'components/card-top-image.html' with modifer='home-features-news__card' %}
             {% endfor %}
         </div>
     </div>

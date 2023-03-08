@@ -46,7 +46,7 @@ $breakpoint-lg: 75rem;
             @content;
         }
     } @else if $size == "custom" {
-        @media (#{$type + -width}: #{($pixels / 16) + rem}) {
+        @media (#{$type + -width}: #{calc($pixels / 16) + rem}) {
             @content;
         }
     } @else {
