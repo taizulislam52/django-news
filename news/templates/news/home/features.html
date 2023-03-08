@@ -1,8 +1,18 @@
 <div class="container">
     <div class="home-features">
-        <h2 class="home-features__heading">
-            Features News
-        </h2>
+        <div class="home-features-top">
+            <h2 class="home-features__heading">
+                Features News
+            </h2>
+            <div class="home-features-top-arrows">
+                <button aria-label="Arrow Left" class="home-features-top-arrows__arrow home-features-top-arrows__arrow--left">
+                    <span class="sr-only">Features News Slider Arrow Left</span>
+                </button>
+                <button aria-label="Arrow Right" class="home-features-top-arrows__arrow home-features-top-arrows__arrow--right">
+                    <span class="sr-only">Features News Slider Arrow Right</span>
+                </button>
+            </div>
+        </div>
         <div class="home-features-news">
             {% for news in features_news %}
                 {% include 'components/card-top-image.html' with modifer='home-features-news__card' %}

@@ -48,3 +48,36 @@ function loadMoreTrendingNews(e) {
 }
 // Home trending load more news
 trendingLoadMoreButton.addEventListener('click', (e)=> loadMoreTrendingNews(e))
+
+;(function($) {
+  $('.home-features-news').slick({
+    dots: false,
+    infinite: false,
+    arrows: false,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      },
+    ]
+  });
+  $('.home-features-top-arrows__arrow--left').click(function(){
+    $('.home-features-news').slick('slickPrev');
+  })
+  
+  $('.home-features-top-arrows__arrow--right').click(function(){
+    $('.home-features-news').slick('slickNext');
+  })
+}(jQuery));
