@@ -23,4 +23,5 @@
     {{total_trending_news|json_script:"total-trending-news"}}
     {{ ajax_url|json_script:"ajax_url"}}
     {% include 'news/home/trending.html' with trending_news=trending_news %}
+    {% include 'news/home/features.html' with features_news=features_news %}
 {% endblock content %}

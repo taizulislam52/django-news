@@ -22,6 +22,7 @@ class NewsListView(ListView):
         context['first_news'] = Post.objects.first()
         context['total_trending_news'] = Post.objects.filter(category__slug='trending').count()
         context['trending_news'] = Post.objects.filter(category__slug='trending')[0:6]
+        context['features_news'] = Post.objects.filter(category__slug='features')
     
         return context
 

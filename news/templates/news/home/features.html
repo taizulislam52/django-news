@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="home-features">
+        <h2 class="home-features__heading">
+            Features News
+        </h2>
+        <div class="home-features__news">
+            {% for news in features_news %}
+                {% include 'components/card-top-image.html' %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
