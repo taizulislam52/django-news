@@ -442,6 +442,18 @@ img {
 .newsletter-form__submit:hover {
   background-color: rgba(16, 145, 255, 0.8);
 }
+.newsletter__message {
+  margin-top: 1.125rem;
+  font-size: 1.0625rem;
+  line-height: 1.6875rem;
+  display: none;
+}
+.newsletter__message--error {
+  color: #f55;
+}
+.newsletter__message--success {
+  color: #1091ff;
+}
 
 .news-categories {
   background-color: #fff;

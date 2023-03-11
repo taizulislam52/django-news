@@ -2,6 +2,7 @@ const primaryNav = document.querySelector('.header__primary-nav');
 const toggleBar  = document.querySelector('.header__toggle');
 const totalTrendingNews = JSON.parse(document.getElementById('total-trending-news').textContent);
 const trendingAjaxURl = JSON.parse(document.getElementById('ajax_url').textContent);
+const subscribeNewsletterAjaxUrl = JSON.parse(document.getElementById('subscribe_newsletter_ajax_url').textContent);
 const trendingLoadMoreButton = document.querySelector('.home-trending-button__button')
 const dropdownMenuItems   = document.querySelectorAll('.header__primary-menu__item--dropdown')
 
@@ -80,4 +81,60 @@ trendingLoadMoreButton.addEventListener('click', (e)=> loadMoreTrendingNews(e))
   $('.home-features-top-arrows__arrow--right').click(function(){
     $('.home-features-news').slick('slickNext');
   })
+
+  // Newsletter subscribtion
+  $('body').on('submit', '#newsletter', function (e) {
+    e.preventDefault()
+    const $this = $(this)
+    const $email = $('#email').val()
+    if( ! isEmail( $email ) ) {
+      $('.newsletter__message--error').show(100)
+      return
+    }
+    $.ajax({
+      url: subscribeNewsletterAjaxUrl,
+      type: 'POST',
+      data: {
+        'email': $email,
+        'csrfmiddlewaretoken': $("input[name=csrfmiddlewaretoken]").val(),
+      },
+      beforeSend: function () {
+        $('.newsletter-form__submit').val('Subscribe...')
+      },
+      success: function (response) {
+          const {error, message} = response
+          if(error) {
+            $('.newsletter__message--error').show(100).text(message)
+            setTimeout(function(){
+              $('.newsletter__message--error').hide()
+            }, 3000)
+          } else {
+            $this[0].reset()
+            $('.newsletter__message--success').show(100).text(message)
+            setTimeout(function(){
+              $('.newsletter__message--success').hide()
+            }, 3000)
+          }
+          $('.newsletter-form__submit').val('Subscribe')
+      },
+      error: function (err) {
+          console.log(err);
+      },
+    });
+  })
+  // Hide email error message
+  $('#email').keyup(function(){
+    const $newsletterError = $('.newsletter__message--error')
+    if( $newsletterError.length ) {
+      $('.newsletter__message--error').hide(100)
+    }
+  })
 }(jQuery));
+
+
+/* Check if email is valid */
+const isEmail = (email) => {
+  // eslint-disable-next-line no-useless-escape
+  const regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return regex.test(email);
+};

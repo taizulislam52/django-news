@@ -1,11 +1,13 @@
 <div class="newsletter {{ modifier }}">
     <h3 class="newsletter__heading">News Letter</h3>
     <p class="newsletter__sub-heading">Your email address will not be this published.</p>
-    <form action="" class="newsletter-form">
+    <form id="newsletter" class="newsletter-form">
         <div class="newsletter-form__group">
             <label for="email" class="sr-only newsletter-form__lable">Email Address</label>
-            <input type="email" name="email" id="email" class="newsletter-form__input" placeholder="Your email address">
+            <input type="email" name="email" id="email" required class="newsletter-form__input" placeholder="Your email address">
         </div>
-        <input class="newsletter-form__submit" type="submit" value="Sign up">
+        <input class="newsletter-form__submit" type="submit" value="Subscribe">
     </form>
+    <p class="newsletter__message newsletter__message--error">Invalid Email Address</p>
+    <p class="newsletter__message newsletter__message--success"></p>
 </div>

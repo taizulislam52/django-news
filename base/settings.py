@@ -132,3 +132,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'profile'
 LOGIN_URL = 'login'
+
+# Admin Email Address
+ADMIN_EMAIL_ADDRESS = 'admin@django.news'
+
+# Email settings
+
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = '0207353a535f20'
+EMAIL_HOST_PASSWORD = 'b6cef001fae95c'
+EMAIL_PORT = '2525'

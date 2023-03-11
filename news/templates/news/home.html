@@ -26,6 +26,8 @@
     {% include 'news/home/features.html' with features_news=features_news %}
     <div class="container">
         <div class="home-newsletter-categories">
+            {% url 'subscribe-newsletter' as subscribe_newsletter_ajax_url %}
+            {{ subscribe_newsletter_ajax_url|json_script:"subscribe_newsletter_ajax_url" }}
             {% include 'components/newsletter.html' with modifier='home-newsletter-categories__newsletter' %}
             {% include 'components/news-categories.html' with modifier='home-newsletter-categories__categories' categoris=categories %}
         </div>

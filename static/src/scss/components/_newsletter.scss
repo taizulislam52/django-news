@@ -52,4 +52,16 @@
             }
         }
     }
+    &__message {
+        margin-top: rem(18px);
+        font-size: rem(17px);
+        line-height: rem(27px);
+        display: none;
+        &--error {
+            color: $news-red;
+        }
+        &--success {
+            color: $news-blue-dark;
+        }
+    }
 }

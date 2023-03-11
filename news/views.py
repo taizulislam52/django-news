@@ -5,6 +5,9 @@ from django.db.models import Q
 from django.template.loader import render_to_string
 from .models import Post, Category
 from django.http import JsonResponse
+from django.core.mail import send_mail, BadHeaderError
+from django.conf import settings
+from smtplib import SMTPException
 
 
 # Create your views here.
@@ -77,4 +80,38 @@ def load_more_trending_news(request):
     data = {
         'trending_news': trending_news
     }
+    return JsonResponse(data=data)
+
+def subscribe_newsletter(request):
+    user_email = request.POST.get('email', '')
+    body = f'''A new user subscribe to our newsletter
+    Email Address: {user_email}'''
+    try:
+        send_mail(
+            'Newsletter Subcribtion',
+            body,
+            user_email,
+            [settings.ADMIN_EMAIL_ADDRESS],
+            fail_silently=False,
+        )
+        data = {
+            'error': False,
+            'message': 'Thanks for subscribing.'
+        }
+    except BadHeaderError:              # If mail's Subject is not properly formatted.
+        data = {
+            'error': True,
+            'message': 'Invalid header found.'
+        }
+    except SMTPException as e:          # It will catch other errors related to SMTP.
+        data = {
+            'error': True,
+            'message': 'There was an error sending an email.'+ e
+        }
+    except:                             # It will catch All other possible errors.
+        data = {
+            'error': True,
+            'message': 'Mail Sending Failed!'
+        }
+    
     return JsonResponse(data=data)
