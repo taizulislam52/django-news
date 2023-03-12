@@ -19,7 +19,7 @@
                     <p class="single__meta-author">{{ object.author|capfirst }}</p>
                     <p class="single__meta-date">{{ object.created_at|date:'F j, Y' }}</p>
                 </div>
-                <div>Social Share</div>
+                {% include 'news/single/share-news.html' %}
             </div>
             <div class="single__content">
                 {% autoescape off %}

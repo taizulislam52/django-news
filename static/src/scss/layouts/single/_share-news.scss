@@ -1,0 +1,32 @@
+.single-share-news {
+    display: flex;
+    align-items: center;
+    &-items {
+        display: flex;
+        align-items: center;
+        img {
+            display: block;
+            height: 20px;
+            width: auto;
+        }
+        &__item {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: rem(20px);
+            list-style: none;
+            transition: transform 0.3s;
+
+            &--email {
+                img {
+                    height: 25px;
+                }
+            }
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+        &__link {
+            display: block;
+        }
+    }
+}
