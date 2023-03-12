@@ -297,9 +297,7 @@ img {
 .card-top-image__image {
   aspect-ratio: 3/2;
   border-radius: 5px;
-}
-.card-top-image__contents {
-  padding: 40px;
+  width: 100%;
 }
 .card-top-image__title {
   margin-top: 1.125rem;
@@ -1010,6 +1008,7 @@ img {
 .single__image {
   aspect-ratio: 25/12;
   border-radius: 5px;
+  width: 100%;
 }
 @media (max-width: 47.99rem) {
   .single__image {
@@ -1343,5 +1342,26 @@ img {
 @media (max-width: 47.99rem) {
   .home-newsletter-categories__newsletter {
     margin-bottom: 2rem;
+  }
+}
+
+.single-related-news {
+  margin-bottom: 2.1875em;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 1.25em;
+}
+.single-related-news__heading {
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.single-related-news__content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+@media (max-width: 47.99rem) {
+  .single-related-news__content {
+    grid-template-columns: repeat(1, 1fr);
   }
 }

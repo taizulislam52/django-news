@@ -28,6 +28,7 @@
     &__image {
         aspect-ratio: 25/12;
         border-radius: 5px;
+        width: 100%;
 
         @include screen(sm) {
             aspect-ratio: 1/1;
