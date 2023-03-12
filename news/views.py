@@ -32,6 +32,17 @@ class NewsListView(ListView):
 
 class NewsSingleView(DetailView):
     model = Post
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(NewsSingleView, self).get_context_data(*args, **kwargs)
+        post = self.get_object()
+        category = post.category.slug
+        context['related_news'] = Post.objects.filter(
+            Q(category__slug=category) &
+            ~Q(pk=post.pk)
+        )[:3]  
+        return context
+    
     template_name = 'news/single.html'
 
 

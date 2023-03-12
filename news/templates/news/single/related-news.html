@@ -1,0 +1,8 @@
+<div class="single-related-news{{ modifer }}">
+    <h3 class="single-related-news__heading">Related News</h3>
+    <div class="single-related-news__heading">
+        {% for news in related_news %}
+        {% include 'components/card-top-image.html' %}
+        {% endfor %}
+    </div>
+</div>

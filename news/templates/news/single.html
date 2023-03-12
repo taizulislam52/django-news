@@ -23,5 +23,8 @@
                 {% endautoescape %}
             </div>
         </div>
+        <div class="single-related-news">
+            {% include 'news/single/related-news.html' with related_news=related_news %}
+        </div>
     </div>
 {% endblock content %}
