@@ -93,6 +93,14 @@ body {
   font-family: "Heebo", sans-serif;
   color: #17222b;
   background-color: #ecedee;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
 }
 
 button {
@@ -1181,10 +1189,13 @@ img {
 }
 
 .magazine {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   padding-top: 2.1875em;
   padding-bottom: 2.1875em;
   padding-inline: 2em;
-  max-width: 700px;
+  max-width: 800px;
   margin-inline: auto;
   margin-bottom: 2.1875rem;
   background-color: rgba(112, 189, 255, 0.1);
@@ -1192,6 +1203,7 @@ img {
 @media (max-width: 47.99rem) {
   .magazine {
     padding-inline: 1em;
+    width: calc(100% - 2rem);
   }
 }
 .magazine__title {
@@ -1201,6 +1213,19 @@ img {
   .magazine__title {
     font-size: 1.5625rem;
   }
+}
+.magazine__button {
+  background-color: #1091ff;
+  border: 1px solid #1091ff;
+  color: #fff;
+  border-radius: 5px;
+  padding: 1em 2em;
+  -webkit-transition: background-color 0.4s;
+  transition: background-color 0.4s;
+}
+.magazine__button:hover {
+  background-color: transparent;
+  color: #000;
 }
 .magazine-form {
   font-size: 1rem;
@@ -1223,18 +1248,31 @@ img {
   border: 1px solid #39424a;
   padding: 1.125em 0.875em;
 }
-.magazine-form__submit {
-  background-color: #1091ff;
-  border: 1px solid #1091ff;
-  color: #fff;
-  border-radius: 5px;
-  padding: 1em 2em;
-  -webkit-transition: background-color 0.4s;
-  transition: background-color 0.4s;
+.magazine-form__error {
+  color: #f55;
+  display: block;
+  margin-top: 0.75rem;
 }
-.magazine-form__submit:hover {
+.magazine-download {
+  display: none;
+}
+.magazine-download__msg {
+  font-size: 1.125rem;
+  line-height: 1.875rem;
+  display: none;
+}
+.magazine-download__msg span {
+  font-weight: 600;
+}
+.magazine-download__link {
+  display: none;
+  padding: 0.875em 1.75em;
+  margin-top: 1.25rem;
+}
+.magazine-download__link--home {
+  color: #1091ff;
   background-color: transparent;
-  color: #000;
+  border: 1px solid #1091ff;
 }
 
 /* Theme templates */
