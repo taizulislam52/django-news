@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+{% block content %}
+
+
+<div class="container">
+    <div class="magazine">
+        <h1 class="magazine__title">Download Our magazine</h1>
+        <form class="magazine-form">
+            <label class="magazine-form__label">
+                <span class="magazine-form__text">Name</span>
+                <input type="text" class="magazine-form__input" name="name" placeholder="Enter Name">
+            </label>
+            <label class="magazine-form__label">
+                <span class="magazine-form__text">Email</span>
+                <input type="email" class="magazine-form__input" name="email" placeholder="Enter Email">
+            </label>
+            <label class="magazine-form__label">
+                <span class="magazine-form__text">Job Title</span>
+                <input type="text" class="magazine-form__input" name="job-title" placeholder="Job Title">
+            </label>
+            <label class="magazine-form__label">
+                <span class="magazine-form__text">Magazine kind of Magazine do you want to download?</span>
+                <select class="magazine-form__select" name="magazine-type">
+                    <option value="" selected disabled>Select magazine</option>
+                    <option value="Fashion magazine">Fashion magazine</option>
+                    <option value="Technology magazine">Technology magazine</option>
+                    <option value="Health magazine">Health magazine</option>
+                    <option value="Business magazine">Business magazine</option>
+                    <option value="Travel magazine">Travel magazine</option>
+                </select>
+            </label>
+            <button type="submit" class="button magazine-form__submit">Download</button>
+        </form>
+    </div>
+</div>
+    
+    
+    
+{% endblock content %}

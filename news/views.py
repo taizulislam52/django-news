@@ -126,3 +126,6 @@ def subscribe_newsletter(request):
         }
     
     return JsonResponse(data=data)
+
+def download_magazine(request):
+    return render(request, 'news/magazine.html')
