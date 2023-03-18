@@ -170,7 +170,7 @@ if(document.location.pathname == '/download-magazine') {
       const pdfDocument = $(this).attr("href");
       const newTab = window.open(pdfDocument, '_blank');
       newTab.location;
-      
+
       $('.magazine-download__msg').hide()
       $('.magazine-download__msg--thanks').show()
       $('.magazine-download__msg span').text(selectedMagazine)
