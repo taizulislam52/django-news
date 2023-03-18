@@ -26,6 +26,7 @@
                      {{ object.content }}
                 {% endautoescape %}
             </div>
+            {% include 'news/single/footer.html' %}
         </div>
 
         {% include 'news/single/related-news.html' with related_news=related_news %}

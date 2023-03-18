@@ -1,21 +1,18 @@
-.home-newsletter-categories {
+.home-tab-categories {
     margin-bottom: rem(35px);
     @include screen(sm, min) {
         display: flex;
         gap: 32px;
 
-        &__newsletter {
+        .home-most-view-popular {
             flex-basis: 65%;
             align-self: baseline;
+            margin-bottom: 0;
         }
         &__categories {
             flex-basis: 35%;
         }
     }
-    &__newsletter {
-        @include screen(sm) {
-            margin-bottom: rem(32px);
-        }
-    }
+   
 
 }

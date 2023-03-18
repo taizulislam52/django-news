@@ -1,0 +1,22 @@
+.single-footer {
+    &__title {
+        margin-bottom: rem(20px);
+    }
+    &-tags {
+        list-style: none;
+        display: flex;
+        gap: 12px;
+        &__tag {
+            display: inline-block;
+            width: max-content;
+        }
+        &__link {
+            background-color: $news-blue-light;
+            color: $news-black;
+            padding: em(12px) em(28px);
+            &:hover {
+                color: $news-blue-dark;
+            }
+        }
+    }
+}

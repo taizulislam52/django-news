@@ -1,0 +1,10 @@
+.home-newsletter {
+    margin-bottom: rem(35px);
+    & > div {
+        padding-block: em(64px);
+        & > * {
+            max-width: 900px;
+            margin-inline: auto;
+        }
+    }
+}

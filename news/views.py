@@ -27,8 +27,8 @@ class NewsListView(ListView):
         context['trending_news'] = Post.objects.filter(category__slug='trending')[0:6]
         context['features_news'] = Post.objects.filter(category__slug='features')
         context['categories'] = Category.objects.all()
-        context['most_views'] = Post.objects.filter(section='Most View')
-        context['popular'] = Post.objects.filter(section="Popular")
+        context['most_views'] = Post.objects.filter(section='Most View')[:4]
+        context['popular'] = Post.objects.filter(section="Popular")[:4]
     
         return context
 
