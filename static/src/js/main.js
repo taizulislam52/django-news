@@ -6,6 +6,7 @@ if(document.location.pathname == '/') {
   const subscribeNewsletterAjaxUrl = JSON.parse(document.getElementById('subscribe_newsletter_ajax_url').textContent);
   const trendingLoadMoreButton = document.querySelector('.home-trending-button__button')
   const dropdownMenuItems   = document.querySelectorAll('.header__primary-menu__item--dropdown')
+  const tabButtons = document.querySelectorAll('.home-most-view-popular-tab-buttons__button');
 
   toggleBar.addEventListener( 'click', openNavigation )
 
@@ -50,6 +51,37 @@ if(document.location.pathname == '/') {
   }
   // Home trending load more news
   trendingLoadMoreButton.addEventListener('click', (e)=> loadMoreTrendingNews(e))
+
+  tabButtons.forEach(function(elem) {
+    elem.addEventListener("click", (e) => mostPopularViewTab(e))
+  });
+
+  function mostPopularViewTab(e) {
+    const currentTabName = convertToSlug(e.target.textContent);
+    let tabPanes, tabButtons;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabPanes = document.querySelectorAll(".home-most-view-popular-tab-content__pane");
+    tabPanes.forEach(tabPane => {
+      tabPane.style.display = "none";
+    })
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tabButtons = document.querySelectorAll(".home-most-view-popular-tab-buttons__button");
+    tabButtons.forEach(tabButton =>  {
+      tabButton.className =tabButton.className.replace(" active", "");
+    })
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.querySelector(`.home-most-view-popular-tab-content__pane--${currentTabName}`).style.display = "block";
+    e.currentTarget.className += " active";
+  }
+
+  function convertToSlug(slug) {
+    return slug.toLowerCase()
+               .replace(/ /g, '-')
+               .replace(/[^\w-]+/g, '');
+  }
 
   ;(function($) {
     $('.home-features-news').slick({
@@ -130,6 +162,18 @@ if(document.location.pathname == '/') {
         $('.newsletter__message--error').hide(100)
       }
     })
+     /*=========================================================================
+            Tabs loader
+    =========================================================================*/
+    $('button[data-bs-toggle="tab"]').on( 'click', function() {
+      $(".tab-pane").addClass("loading");
+      $('.lds-dual-ring').addClass("loading");
+      setTimeout(function () {
+          $(".tab-pane").removeClass("loading");
+          $('.lds-dual-ring').removeClass("loading");
+      }, 500);
+    });
+    
   }(jQuery));
 
 }

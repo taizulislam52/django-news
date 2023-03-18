@@ -31,5 +31,23 @@
             {% include 'components/newsletter.html' with modifier='home-newsletter-categories__newsletter' %}
             {% include 'components/news-categories.html' with modifier='home-newsletter-categories__categories' categoris=categories %}
         </div>
+        <div class="home-most-view-popular">
+            <ul class="home-most-view-popular-tab-buttons">
+                <li class="home-most-view-popular-tab-buttons__button">Most View</li>
+                <li class="home-most-view-popular-tab-buttons__button">Popular</li>
+            </ul>
+            <div class="home-most-view-popular-tab-content">
+                <div id="home-most-view" class="home-most-view-popular-tab-content__pane home-most-view-popular-tab-content__pane--most-view">
+                    {% for news in most_views %}
+                        {% include 'components/card-list.html' with modifier='home-most-view-popular-tab-content__card' %}
+                    {% endfor %}
+                </div>
+                <div id="home-popular" class="home-most-view-popular-tab-content__pane home-most-view-popular-tab-content__pane--popular">
+                    {% for news in popular %}
+                        {% include 'components/card-list.html' with modifier='home-most-view-popular-tab-content__card' %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock content %}

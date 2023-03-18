@@ -1,0 +1,47 @@
+.home-most-view-popular {
+    border-radius: $border-radius;
+    overflow: hidden;
+    margin-bottom: rem(35px);
+    &-tab {
+        &-buttons {
+            list-style: none;
+            display: flex;
+            &__button {
+                display: inline-block;
+                flex: 1;
+                background: $white;
+                font-size: rem(14px);
+                font-weight: 600;
+                color: #000;
+                text-transform: uppercase;
+                box-shadow: 0 10px 40px rgba(0,0,0,.15);
+                line-height: rem(12px);
+                padding: em(20px) em(33px);
+                text-align: center;
+                cursor: pointer;
+                &.active {
+                    background-color: $news-blue-dark;
+                    color: $white;
+                }
+                &:hover {
+                    border-color: #e9ecef #e9ecef #dee2e6;
+                }
+            }
+        }
+        &-content {
+            background-color: $white;
+            padding: em(15px);
+            &__pane:not(:first-child) {
+                display: none;
+            }
+            &__pane {
+                animation: fadeEffect 1s;
+            }
+        }
+    }
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
