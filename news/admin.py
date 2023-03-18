@@ -11,10 +11,10 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ("title",'category')
+    list_display = ("title",'category','section')
     prepopulated_fields = {"slug": ("title",)}
-    autocomplete_fields = ["tags", 'category']
-    search_fields = ["title", "content"]
+    autocomplete_fields = ["tags", 'category', 'author']
+    search_fields = ["title", "content", 'section']
     save_as = True
   
 

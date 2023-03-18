@@ -64,12 +64,18 @@ class Tag(models.Model):
 
 
 class Post(models.Model):
+    SECTION = (
+        ('Popular', 'Popular'),
+        ('Trending', 'Trending'),
+        ('Most View', 'Most View'),
+    )
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100,null=True, unique=True)
     content = models.TextField()
     features_image = models.ImageField(upload_to='news', blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+    section = models.CharField(choices=SECTION, max_length=200, blank=True)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
     tags = models.ManyToManyField(Tag, blank=True)
 
