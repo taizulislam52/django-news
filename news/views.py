@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, DetailView
 from django.db.models import Q
 from django.template.loader import render_to_string
-from .models import Post, Category
+from .models import Post, Category, Tag
 from django.http import JsonResponse
 from django.core.mail import send_mail, BadHeaderError
 from django.conf import settings
@@ -77,6 +77,23 @@ class NewsCategoryView(ListView):
     def get_context_data(self, **kwargs):
         context = super(NewsCategoryView, self).get_context_data(**kwargs)
         context['category_name'] = self.kwargs['slug']
+    
+        return context
+
+class NewsTagView(ListView):
+    model = Tag
+    template_name = 'news/tag.html'
+    context_object_name = 'tags'
+    paginate_by = 5
+
+    def get_queryset(self):
+        self.tag = get_object_or_404(Tag, slug=self.kwargs['slug'])
+        tags = Tag.objects.filter(name=self.tag).values_list('name', flat=True)
+        return Post.objects.filter(tags__name__in=tags).order_by('-created_at')
+    
+    def get_context_data(self, **kwargs):
+        context = super(NewsTagView, self).get_context_data(**kwargs)
+        context['tag_name'] = self.kwargs['slug']
     
         return context
 

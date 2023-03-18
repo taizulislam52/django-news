@@ -3,7 +3,7 @@
     <ul class="single-footer-tags">
         {% for tag in object.tags.all  %}
             <li class="single-footer-tags__tag">
-                <a class="single-footer-tags__link" href="{{tag.slug}}">{{tag.name}}</a>
+                <a class="single-footer-tags__link" href="{{ tag.get_absolute_url }}">{{tag.name}}</a>
             </li>
         {% endfor %}
     </ul>

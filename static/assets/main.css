@@ -1275,6 +1275,19 @@ img {
   border: 1px solid #1091ff;
 }
 
+.tag {
+  margin-top: 2.1875rem;
+  margin-bottom: 2.1875rem;
+}
+.tag__heading {
+  margin-bottom: 1.25rem;
+}
+.tag__results {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 1.5625em;
+}
+
 /* Theme templates */
 .home-featured {
   display: grid;

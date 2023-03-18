@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+{% block content %}
+    <div class="container">
+        <div class="tag">
+            <h1 class="tag__heading">Tag: {{ tag_name | capfirst }}</h1>
+            {% if tags %}
+            <div class="tag__results">
+                {{news_tags}}
+                {% for tag in tags %}
+                    {% include 'components/card-list.html' with news=tag  %}
+                {% endfor %}
+            </div>
+            {% else %}
+             <h3 class="tag__not-found">
+                We’re sorry, but no results were found matching your tag.
+            </h3>
+            {% endif %}
+           {% if is_paginated %}
+                <div class="pagination">
+                        {% if page_obj.has_previous %}
+                            <a class="pagination__link pagination__link--first" href="?page=1">First</a>
+                            <a class="pagination__link pagination__link--previous" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                        {% endif %}
+                        {% for num in page_obj.paginator.page_range  %}
+                            {% if page_obj.number == num %}
+                                <a class="pagination__link pagination__link--active" disabled aria-disabled="true" role="link">{{ num }}</a>
+                            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                                <a class="pagination__link" href="?page={{ num }}">{{ num }}</a>
+                            {% endif %}
+                        {% endfor %}
+                        {% if page_obj.has_next %}
+                            <a class="pagination__link pagination__link--next" href="?page={{ page_obj.next_page_number }}">Next</a>
+                            <a class="pagination__link pagination__link--last" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+                        {% endif %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock content %}
