@@ -4,6 +4,7 @@ from django.template.defaultfilters import slugify
 from django.urls import reverse
 from django.core.exceptions import ValidationError
 from django.forms.widgets import TextInput
+from ckeditor_uploader.fields import RichTextUploadingField 
 import uuid
 
 class ColorField(models.CharField):
@@ -71,7 +72,7 @@ class Post(models.Model):
     )
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100,null=True, unique=True)
-    content = models.TextField()
+    content = RichTextUploadingField()
     features_image = models.ImageField(upload_to='news', blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
