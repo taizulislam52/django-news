@@ -67,7 +67,7 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100,null=True, unique=True)
     content = models.TextField()
-    features_image = models.ImageField(upload_to='static/src/images', blank=True, default='static/src/images/default.png')
+    features_image = models.ImageField(upload_to='news', blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
