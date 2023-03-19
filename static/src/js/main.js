@@ -63,7 +63,7 @@ if(document.location.pathname == '/') {
     // Get all elements with class="tabcontent" and hide them
     tabPanes = document.querySelectorAll(".home-most-view-popular-tab-content__pane");
     tabPanes.forEach(tabPane => {
-      tabPane.style.display = "none";
+      tabPanes[i].style.display = "none";
     })
 
     // Get all elements with class="tablinks" and remove the class "active"
@@ -197,7 +197,7 @@ if(document.location.pathname == '/download-magazine') {
         $(this).hide()
         $('.magazine-download').show()
         $('.magazine-download__msg').show()
-        $('.magazine-download__msg--thanks').hide()
+        $('.magazine-download__msg span').text(selectedMagazine)
         $(`.magazine-download__link--${selectedMagazine.split(' ')[0].toLowerCase()}`).css({'display': 'inline-block' })
       }
      
@@ -208,19 +208,6 @@ if(document.location.pathname == '/download-magazine') {
       if( $(this).next().is('span')) {
         $(this).next().hide(100)
       }
-    })
-    $('.magazine-download__link').on('click', function(e){
-      e.preventDefault()
-      const pdfDocument = $(this).attr("href");
-      const newTab = window.open(pdfDocument, '_blank');
-      newTab.location;
-
-      $('.magazine-download__msg').hide()
-      $('.magazine-download__msg--thanks').show()
-      $('.magazine-download__msg span').text(selectedMagazine)
-      $('.magazine-download__link--home').css({'display': 'inline-block'})
-      $(this).hide()
-
     })
   }(jQuery));
 }
